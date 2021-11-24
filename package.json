@@ -1,0 +1,21 @@
+{
+  "name": "@lanyard-privacy/tedge",
+  "author": "Jack Hedaya <jackehedaya@gmail.com>",
+  "repository": "https://github.com/lanyard-privacy/tedge",
+  "description": "A serverless function to anonymize requests at the edge",
+  "license": "MIT",
+  "version": "1.0.0",
+  "dependencies": {
+    "@vercel/node": "^1.8.5",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "tabWidth": 2
+  }
+}
