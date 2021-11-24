@@ -5,13 +5,19 @@
   "description": "A serverless function to anonymize requests at the edge",
   "license": "MIT",
   "version": "1.0.0",
+  "scripts": {
+    "deploy": "vercel",
+    "dev": "ts-node test-server/index.ts"
+  },
   "dependencies": {
     "@vercel/node": "^1.8.5",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
-    "prettier": "^2.2.1"
+    "ngrok": "^4.2.2",
+    "prettier": "^2.2.1",
+    "ts-node": "^10.4.0"
   },
   "prettier": {
     "singleQuote": true,

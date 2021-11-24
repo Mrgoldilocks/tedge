@@ -31,7 +31,7 @@ function copyHeaders(headers: VercelRequest['rawHeaders']): HeadersInit {
 
   for (let i = 0; i < headers.length; i++) {
     if (i % 2 === 0) h.push([headers[i]])
-    else h.at(-1)[1] = headers[i]
+    else h[h.length - 1][1] = headers[i]
   }
 
   return new Headers(h)
