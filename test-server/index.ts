@@ -6,7 +6,8 @@ async function main() {
 
   http
     .createServer(function (req, res) {
-      console.log(req)
+      console.log(req.socket.remoteAddress)
+
       res.writeHead(200, { 'Content-Type': 'text/plain' })
       res.write('Hello World!')
       res.end()
