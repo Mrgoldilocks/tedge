@@ -1,6 +1,8 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
-import fetch, { Headers, HeadersInit } from 'node-fetch'
+import { createProxyServer } from 'http-proxy'
 import { URL } from 'url'
+
+const proxy = createProxyServer({ autoRewrite: true, changeOrigin: true })
 
 export default async function (req: VercelRequest, res: VercelResponse) {
   if (typeof req.query.__api_redirect !== 'string')
@@ -19,22 +21,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     req.query as Record<string, string>
   ).toString()
 
-  fetch(url, {
-    headers: copyHeaders(req.rawHeaders),
-    body: req.body,
-    method: req.method,
-  })
-}
-
-function copyHeaders(headers: VercelRequest['rawHeaders']): HeadersInit {
-  const h: string[][] = []
-
-  for (let i = 0; i < headers.length; i++) {
-    if (i % 2 === 0) h.push([headers[i]])
-    else h[h.length - 1][1] = headers[i]
-  }
-
-  return new Headers(h)
+  proxy.web(req, res, { target: url })
 }
 
 export const config = {

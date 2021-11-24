@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@vercel/node": "^1.8.5",
-    "node-fetch": "^2.6.1"
+    "http-proxy": "^1.18.1"
   },
   "devDependencies": {
+    "@types/http-proxy": "^1.17.7",
     "@types/node-fetch": "^2.5.7",
     "ngrok": "^4.2.2",
     "prettier": "^2.2.1",
