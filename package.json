@@ -6,12 +6,14 @@
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
-    "deploy": "vercel",
+    "vercel": "vercel",
+    "deploy": "vercel --prod",
     "dev": "ts-node test-server/index.ts"
   },
   "dependencies": {
     "@vercel/node": "^1.8.5",
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "vercel": "^23.1.2"
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.7",
